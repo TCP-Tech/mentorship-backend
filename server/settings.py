@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'questions'
-    'team.apps.TeamConfig',
+    'team'
 ]
 
 MIDDLEWARE = [
