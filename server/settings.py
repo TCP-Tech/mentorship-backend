@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'users.apps.UsersConfig',
-    'questions',
+    'questions.apps.QuestionsConfig',
     'leaderboard',
     'team',
 ]
