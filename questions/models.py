@@ -12,6 +12,10 @@ class Question(models.Model):
         ]
     topic=models.ForeignKey(Topic,models.CASCADE)
     name=models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
     codechefLink=models.URLField(max_length=200)
     codeforcesLink=models.URLField(max_length=200)
     gfgLink=models.URLField(max_length=200)
