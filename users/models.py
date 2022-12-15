@@ -1,19 +1,10 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 # Mentor model
 
-Semesters = (
-    ("1" , "1"),
-    ("2" , "2"),
-    ("3" , "3"),
-    ("4" , "4"),
-    ("5" , "5"),
-    ("6" , "6"),
-    ("7" , "7"),
-    ("8" , "8"),
-)
 Branches = (
     ("1" , "CSE"),
     ("2" , "IT"),
@@ -24,20 +15,17 @@ Branches = (
     ("7" , "CIVIL"),
     ("8" , "META"),
     ("9" , "MIN"),
-    ("10" , "MCA"),
-    ("11" , "BIOMED"),
-    ("12" , "BIOTECH"),
-    ("13" , "MCA"),
+    ("10" , "BIOMED"),
+    ("11" , "BIOTECH"),
+    ("12" , "MCA"),
 )
 
 class Mentor(AbstractUser):
-    email = models.EmailField(max_length=200)
     name = models.CharField(max_length=200, null=False)
     username = models.CharField(max_length=200,null=False,unique=True)
     password = models.CharField(max_length=200)
-    alloted_team_ids = models.BigIntegerField()
-    branch = models.CharField(max_length=100,choices=Branches)
-    semester = models.CharField(max_length=100,choices=Semesters)
+    branch = models.CharField(max_length=8,choices=Branches)
+    semester = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(8)])
     phone_number = models.BigIntegerField(unique=True)
     codechefID = models.URLField(max_length=100)
     codeforcesID = models.URLField(max_length=100)
