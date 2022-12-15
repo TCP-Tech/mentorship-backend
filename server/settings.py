@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'team',
 ]
 
+AUTH_USER_MODEL="users.Mentee"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
