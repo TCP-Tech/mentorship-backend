@@ -24,7 +24,7 @@ class Mentor(AbstractUser):
     name = models.CharField(max_length=200, null=False)
     username = models.CharField(max_length=200,null=False,unique=True)
     password = models.CharField(max_length=200)
-    branch = models.CharField(max_length=8,choices=Branches)
+    branch = models.CharField(max_length=10,choices=Branches)
     semester = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(8)])
     phone_number = models.BigIntegerField(unique=True)
     codechefID = models.URLField(max_length=100)
