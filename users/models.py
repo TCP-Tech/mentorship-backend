@@ -26,7 +26,7 @@ class Mentor(AbstractUser):
     password = models.CharField(max_length=200)
     branch = models.CharField(max_length=10,choices=Branches)
     semester = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(8)])
-    phone_number = models.BigIntegerField(unique=True)
+    phone_number = models.CharField(max_length=10,unique=True)
     codechefID = models.URLField(max_length=100)
     codeforcesID = models.URLField(max_length=100)
     leetcodeID = models.URLField(max_length=100)
