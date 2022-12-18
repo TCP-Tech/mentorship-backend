@@ -25,5 +25,13 @@ class Question(models.Model):
     # mentor_id=models.IntegerField()
     alloted_at=models.DateTimeField()
 
-
+class QuestionStatus(models.Model):
+    LEVELS=[
+        ('easy','easy'),
+        ('medium','medium'),
+        ('hard','hard'),
+        ]
+    solved_topic=models.ForeignKey(Topic,models.CASCADE)
+    solved_level=models.CharField(choices=LEVELS,max_length=6)
+    solved_at=models.DateTimeField()
     
