@@ -46,10 +46,7 @@ INSTALLED_APPS = [
     'team',
 ]
 
-<<<<<<< HEAD
-AUTH_USER_MODEL="users.Mentee"
-=======
-AUTH_USER_MODEL = 'users.Mentor'
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -62,7 +59,6 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
->>>>>>> e847853d9b3af602f348234a85c4d9491d0c050b
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
