@@ -21,8 +21,13 @@ Branches = (
 )
 
 class CustomUser(AbstractUser):
-    is_mentor=models.BooleanField("Mentor",default=False)
-    is_mentee=models.BooleanField("Mentee",default=False)
+    UserTypes=(
+        ("1","Mentor"),
+        ("2","Mentee")
+    )
+    user_type=models.CharField(max_length=10,choices=UserTypes)
+    class Meta:
+        verbose_name="User"
 
 class Mentor(CustomUser):
     name = models.CharField(max_length=200, null=False)
