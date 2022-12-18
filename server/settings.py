@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'team',
 ]
 
-AUTH_USER_MODEL = 'users.Mentor'
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
