@@ -26,8 +26,6 @@ class CustomUser(AbstractUser):
 
 class Mentor(CustomUser):
     name = models.CharField(max_length=200, null=False)
-    username = models.CharField(max_length=200,null=False,unique=True)
-    password = models.CharField(max_length=200)
     branch = models.CharField(max_length=10,choices=Branches)
     semester = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(8)])
     phone_number = models.CharField(max_length=10,unique=True)
